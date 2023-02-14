@@ -1,1 +1,51 @@
+use_synth :piano
+use_bpm 168
 
+live_loop :back do
+  sample :loop_breakbeat
+  sleep 4.5
+end
+live_loop :back2 do
+  sample :loop_mehackit2
+  sleep 7
+end
+
+live_loop :stranger do
+  play :c4
+  sleep 0.5
+  play :e4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :c4
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :e4
+  sleep 0.5
+  play :c4
+end
+
+live_loop :stranger2 do
+  play :c3
+  sleep 0.5
+  play :e3
+  sleep 0.5
+  play :g3
+  sleep 0.5
+  play :b3
+  sleep 0.5
+  play :c3
+  sleep 0.5
+  play :b3
+  sleep 0.5
+  play :g3
+  sleep 0.5
+  play :e3
+  sleep 0.5
+  play :c3
+end
