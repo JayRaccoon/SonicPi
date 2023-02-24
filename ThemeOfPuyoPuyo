@@ -1,9 +1,9 @@
 vocal = "C:/Users/jayden_martinez/Downloads/Puyo Puyo Vocal Tracks - Arle's theme [vocals].wav"
-use_bpm 150
+use_bpm 153
 use_synth :pulse
 live_loop :vocal do
   sample vocal, amp: 3
-  sleep 16.3
+  sleep 16.1
 end
 live_loop :bayoen do
   8.times do
