@@ -1,0 +1,12 @@
+use_synth :piano
+note = 21
+88.times do
+  play (note)
+  sleep 0.10
+  note = note + 1
+end
+88.times do
+  note = note - 1
+  play (note)
+  sleep 0.10
+end
