@@ -1,0 +1,32 @@
+//Stranger Things
+use_bpm 160
+use_synth :saw
+n = [:c2, :e2, :g2, :b2, :c3, :b2, :g2, :e2]
+i = 0
+live_loop :theme do
+  with_fx :distortion do
+    8.times do
+      play n[i]
+      i = i + 1
+      sleep 0.5
+    end
+i = 0
+  end
+end
+
+//Seven Nation Army
+n = [:e3, :e3, :g3, :e3, :r, :d3, :c3, :b2]
+t = [1.5, 0.5, 0.75, 0.25, 0.5, 0.5, 2, 2]
+i = 0
+use_bpm 120
+use_synth :fm
+use_synth_defaults sustain: 0.25
+
+live_loop :white_stripes do
+  8.times do
+    play n[i]
+    sleep t[i]
+    i = i + 1
+  end
+  i = 0
+end
