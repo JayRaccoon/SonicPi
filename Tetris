@@ -1,0 +1,85 @@
+use_bpm 149
+use_synth :square
+n = [:e5, :b4, :c5, :d5, :a4]
+i = 0
+define :background do
+  4.times do
+    play :f2
+    sleep 0.5
+    play :e3
+    sleep 0.5
+  end
+  4.times do
+    play :e2
+    sleep 0.5
+    play :a2
+    sleep 0.5
+  end
+end
+2.times do
+  background
+end
+live_loop :bg do
+  background
+end
+live_loop :notes do
+  #first
+  i = 0
+  play n[i], amp: 0.5
+  i = 1
+  sleep 1
+  play n[i], amp: 1
+  i = 2
+  sleep 0.5
+  play n[i], amp: 1.5
+  i = 3
+  sleep 0.5
+  play n[i], amp: 2
+  i = 2
+  sleep 1
+  play n[i], amp: 2.5
+  i = 1
+  sleep 0.5
+  play n[i], amp: 3
+  i = 4
+  sleep 0.5
+  #second
+  play n[i], amp: 2.5
+  sleep 1
+  play n[i], amp: 2
+  i = 2
+  sleep 0.5
+  play n[i], amp: 1.5
+  i = 0
+  sleep 0.5
+  play n[i], amp: 1
+  i = 3
+  sleep 1
+  play n[i], amp: 0.5
+  i = 2
+  sleep 0.5
+  play n[i], amp: 1
+  i = 1
+  sleep 0.5
+  #third
+  play n[i], amp: 1.5
+  i = 2
+  sleep 1.5
+  play n[i], amp: 2
+  i = 3
+  sleep 0.5
+  play n[i], amp: 2.5
+  i = 0
+  sleep 1
+  play n[i], amp: 3
+  i = 2
+  sleep 1
+  #fourth
+  play n[i], amp: 2.5
+  i = 4
+  sleep 1
+  play n[i], amp: 1
+  sleep 1
+  play n[i], amp: 0.5
+  sleep 2
+end
