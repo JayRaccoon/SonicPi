@@ -1,60 +1,114 @@
-vocal = "C:/Users/jayden_martinez/Downloads/Puyo Puyo Vocal Tracks - Arle's theme [vocals].wav"
-use_bpm 153
-use_synth :pulse
-live_loop :vocal do
-  sample vocal, amp: 3
-  sleep 16.1
-end
-live_loop :bayoen do
-  8.times do
+segaandtetris = "C:/Users/jayden_martinez/Downloads/Puyo-Puyo-Tetris-Title-Screen-_Switch_.wav"
+start = "C:/Users/jayden_martinez/Downloads/Puyo Puyo Tetris 2 SFX.wav"
+vocal1 = "C:/Users/jayden_martinez/Downloads/Puyo Puyo Vocal Tracks - Arle's theme [vocals].wav"
+vocal2 = "C:/Users/jayden_martinez/Downloads/Puyo Puyo Vocal Tracks - Arle's theme 1[vocals].wav"
+n = [:c3, :d3]
+n2 = [:c5, :a4, :b4, :d4, :d5, :g4, :f4, :e4]
+i = 8
+i2 = 0
+define :bg do
+  4.times do
     play :c3
     sleep 0.5
   end
-  8.times do
+  4.times do
     play :d3
     sleep 0.5
   end
 end
-loop do
+define :main do
   wait 0.5
-  play :c5
+  play n2[i2], amp: 0.5
+  i2 = 1
   wait 1
-  play :a4
+  play n2[i2], amp: 1
+  i2 = 2
   wait 0.5
-  play :b4
+  play n2[i2], amp: 1.5
+  i2 = 1
   wait 1
-  play :a4
+  play n2[i2], amp: 2
+  i2 = 2
   wait 0.5
-  play :b4
+  play n2[i2], amp: 2.5
+  i2 = 4
   wait 0.5
-  play :d5
+  play n2[i2], amp: 3
   wait 0.5
-  play :d5
+  play n2[i2], amp: 2.5
+  i2 = 0
   wait 0.5
-  play :c5
+  play n2[i2], amp: 2
+  i2 = 2
   wait 0.5
-  play :b4
+  play n2[i2], amp: 1.5
+  i2 = 1
   wait 0.5
-  play :a4
+  play n2[i2], amp: 1
+  i2 = 2
   wait 0.5
-  play :b4
+  play n2[i2], amp: 0.5
+  i2 = 0
   wait 2
-  play :c5
+  play n2[i2]
+  i2 = 1
   wait 1
-  play :a4
+  play n2[i2]
+  i2 = 2
   wait 0.5
-  play :b4
+  play n2[i2]
+  i2 = 1
   wait 1
-  play :a4
+  play n2[i2]
+  i2 = 2
   wait 0.5
-  play :b4
+  play n2[i2]
+  i2 = 5
   wait 0.5
-  play :g4
+  play n2[i2]
+  i2 = 6
   wait 0.5
-  play :f4
+  play n2[i2]
+  i2 = 7
   wait 0.5
-  play :e4
+  play n2[i2]
+  i2 = 3
   wait 0.5
-  play :d4
+  play n2[i2]
+  i2 = 0
   sleep 2.5
+end
+use_bpm 143
+use_synth :pulse
+sleep 0.05
+sample segaandtetris, amp: 5
+sleep 60
+sample start
+sleep 3
+2.times do
+  with_fx :bitcrusher, amp: 0.5 do
+    bg
+  end
+end
+live_loop :background, amp: 0.5 do
+  with_fx :bitcrusher do
+    bg
+  end
+end
+2.times do
+  with_fx :bitcrusher do
+    main
+  end
+end
+live_loop :main do
+  with_fx :bitcrusher do
+    main
+  end
+end
+sleep 0.5
+live_loop :vocal do
+  sample vocal1, amp: 2
+  sleep 8
+  sample vocal2, amp: 2
+  sleep 8
 end
